@@ -13,7 +13,7 @@ pipeline
 					pytest ./tests/CrossBrowserTesting.py --browser=Chrome'''
 			}
 		}
-		stage('Run Test in Edge')
+		stage('Run Test in Firefox')
 		{
 			steps
 			{
@@ -23,14 +23,14 @@ pipeline
 						pytest ./tests/CrossBrowserTesting.py --browser=Firefox'''
 			}
 		}
-		stage('Run Test in Firefox')
+		stage('Run Test in Edge')
 		{
 			steps
 			{
 				bat '''set path="C:/Users/sikhi/AppData/Local/Programs/Python/Python312"
 						set path="C:/Users/sikhi/AppData/Local/Programs/Python/Python312/Scripts"
 						pip install -r requirements.txt
-						pytest ./tests/CrossBrowserTesting.py --browser=Chrome'''
+						pytest ./tests/CrossBrowserTesting.py --browser=Edge'''
 			}
 		}
 	}

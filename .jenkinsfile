@@ -1,0 +1,31 @@
+pipeline
+{
+	agent any
+	stages
+	{
+		stage('Run Test in Chrome')
+		{
+			steps
+			{
+				bat '''set path="C:/Users/sikhi/AppData/Local/Programs/Python/Python312"
+					set path="C:/Users/sikhi/AppData/Local/Programs/Python/Python312/Scripts"
+					pip install -r requirements.txt
+					pytest pytest ./tests/CrossBrowserTesting.py --browser=Chrome'''
+			}
+		}
+		stage('Run Test in Edge')
+		{
+			bat '''set path="C:/Users/sikhi/AppData/Local/Programs/Python/Python312"
+					set path="C:/Users/sikhi/AppData/Local/Programs/Python/Python312/Scripts"
+					pip install -r requirements.txt
+					pytest pytest ./tests/CrossBrowserTesting.py --browser=Edge'''
+		}
+		stage('Run Test in Firefox')
+		{
+			bat '''set path="C:/Users/sikhi/AppData/Local/Programs/Python/Python312"
+					set path="C:/Users/sikhi/AppData/Local/Programs/Python/Python312/Scripts"
+					pip install -r requirements.txt
+					pytest pytest ./tests/CrossBrowserTesting.py --browser=Firefox'''
+		}
+	}
+}

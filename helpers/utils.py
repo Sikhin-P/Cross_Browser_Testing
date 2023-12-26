@@ -1,10 +1,10 @@
-from selenium.webdriver import Chrome, Edge, Firefox, Safari
+from selenium.webdriver import Chrome, Firefox, ChromiumEdge
 
 
 def drivers(name):
     driver = {
         'Chrome': Chrome,
-        'Edge': Safari,
+        'Edge': ChromiumEdge,
         'Firefox': Firefox
     }
     return driver[name]
